@@ -6,17 +6,17 @@
         <el-form-item label="name">
           <el-input v-model="userform.name"></el-input>
         </el-form-item>
-        <el-form-item label="name">
-          <el-input v-model="userform.name"></el-input>
+        <el-form-item label="tel">
+          <el-input v-model="userform.tel"></el-input>
         </el-form-item>
-        <el-form-item label="name">
-          <el-input v-model="userform.name"></el-input>
+        <el-form-item label="email">
+          <el-input v-model="userform.email"></el-input>
         </el-form-item>
-        <el-form-item label="活动区域">
+        <el-form-item label="address">
           <el-col :span="10">
             <el-select v-model="userform.region" placeholder="请选择活动区域">
-              <el-option label="区域一" value="shanghai"></el-option>
-              <el-option label="区域二" value="beijing"></el-option>
+              <el-option label="上海" value="shanghai"></el-option>
+              <el-option label="北京" value="beijing"></el-option>
             </el-select>
           </el-col>
           
@@ -29,8 +29,11 @@
             <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
           </el-checkbox-group>
         </el-form-item>
-        <el-form-item label="活动形式">
-          <el-input type="textarea" v-model="userform.desc"></el-input>
+        <el-form-item label="mess">
+          <el-input type="textarea" v-model="userform.mess"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="danger">submit</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -48,7 +51,9 @@ export default {
          name:'',
          region:'',
          type:'',
-         desc:''
+         mess:'',
+         tel:'',
+         email:'',
       },
     }
   },
@@ -65,7 +70,7 @@ export default {
 <style scoped>
    .box{
      width:600px;
-     border:1px solid blue;
+     /* border:1px solid blue; */
    }
 
 </style>

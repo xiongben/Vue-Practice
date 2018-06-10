@@ -45,7 +45,7 @@ export default {
       mes:true,
       input:'',
       map:'',
-      testArr:null,
+      testArr:[1,2,3],
       markers: [{
           position: {lat: 10.0, lng: 10.0}
         }, {
@@ -59,7 +59,7 @@ export default {
     }
   },
   mounted(){
-    if(this.testArr.length){
+    if(Array.isArray(this.testArr) && this.testArr.length >2){
         console.log('chunzai')
     }else{
         console.log('buchunzai')
