@@ -33,7 +33,7 @@
           <el-input type="textarea" v-model="userform.mess"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="danger">submit</el-button>
+          <el-button type="danger" @click="prefun()">submit</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -47,7 +47,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      userform:{
+      userform:{                                                                                           
          name:'',
          region:'',
          type:'',
@@ -55,11 +55,47 @@ export default {
          tel:'',
          email:'',
       },
+      openOcCommand:{
+        excute:function(){
+          console.log("打开空调");
+        }
+      },
+      openTvCommand:{
+        excute:function(){
+          console.log("打开电视");
+        }
+      },
+      openSoundCommand:{
+        excute:function(){
+          console.log("打开音响");
+        }
+      },
+
     }
   },
   methods:{
     tohomepage(){
        this.$router.push({path:'home',query:{id:123}});
+    },
+    MacroCommand(){
+      return {
+         commandsList:[],
+         add:function(command){
+           this.commandsList.push(command);
+         },
+         excute:function(){
+           for(var i=0,command;command=this.commandsList[i++];){
+              command.excute();
+           }
+         }
+      }
+    },
+    prefun(){
+      var macro1=this.MacroCommand();
+      macro1.add(this.openOcCommand);
+      macro1.add(this.openTvCommand);
+      macro1.add(this.openSoundCommand);
+      macro1.excute();
     },
   }
   
