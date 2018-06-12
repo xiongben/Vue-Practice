@@ -18,7 +18,7 @@ export default {
       msg: 'Welcome to Your project',
       name:'xiongben',
       agenum:25,
-      mess:'成都，带不走的只有你，和我在成都的街头走一走33333',
+      mess:'成都，带不走的只有你，和我在成都的街头走一走99999',
       mes:true,
       input:''
     }
