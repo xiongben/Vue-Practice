@@ -1,7 +1,8 @@
 <template>
   <div class="box">
-    <div class="minbox"></div>
-    <div class="a1"></div>
+    <p>info compent {{age}}</p>
+    <div @click="$emit('testfn')" class="changebutton">change</div>
+    
   </div>
 </template>
 
@@ -29,18 +30,14 @@ export default {
 <style scoped>
   .box{
     width:100%;
-    
+    height:200px;
     background: yellowgreen;
     text-align: center;
   }
-  .minbox{
-    width:3.75rem;
-    height:1rem;
-    background: gray;
-  }
-  .a1{
-    width:1.875rem;
-    height:1rem;
-    background: yellow;
+  .changebutton{
+    width:100px;
+    height:50px;
+    border-radius: 25px;
+    background: #666777;
   }
 </style>
