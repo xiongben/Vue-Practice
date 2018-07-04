@@ -3,7 +3,7 @@
     <h1>个人信息填写界面</h1>
     <div class="box">
       <el-form :model="userform" label-width="80px">
-        <el-form-item label="name">
+        <!-- <el-form-item label="name">
           <el-input v-model="userform.name"></el-input>
         </el-form-item>
         <el-form-item label="tel">
@@ -31,22 +31,27 @@
         </el-form-item>
         <el-form-item label="mess">
           <el-input type="textarea" v-model="userform.mess"></el-input>
-        </el-form-item>
+        </el-form-item> -->
         <el-form-item>
           <el-button type="danger" @click="prefun()">submit</el-button>
         </el-form-item>
       </el-form>
     </div>
+    <EditModel :modelshow.sync="showif" ref="model"></EditModel>
   </div>
 </template>
 
 <script>
-
+import EditModel from './model/EditModel.vue';
 export default {
   name: 'HelloWorld',
+  components:{
+     EditModel,
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
+      showif : false,
       userform:{                                                                                           
          name:'',
          region:'',
@@ -55,21 +60,7 @@ export default {
          tel:'',
          email:'',
       },
-      openOcCommand:{
-        excute:function(){
-          console.log("打开空调");
-        }
-      },
-      openTvCommand:{
-        excute:function(){
-          console.log("打开电视");
-        }
-      },
-      openSoundCommand:{
-        excute:function(){
-          console.log("打开音响");
-        }
-      },
+      
 
     }
   },
@@ -77,26 +68,11 @@ export default {
     tohomepage(){
        this.$router.push({path:'home',query:{id:123}});
     },
-    MacroCommand(){
-      return {
-         commandsList:[],
-         add:function(command){
-           this.commandsList.push(command);
-         },
-         excute:function(){
-           for(var i=0,command;command=this.commandsList[i++];){
-              command.excute();
-           }
-         }
-      }
-    },
     prefun(){
-      var macro1=this.MacroCommand();
-      macro1.add(this.openOcCommand);
-      macro1.add(this.openTvCommand);
-      macro1.add(this.openSoundCommand);
-      macro1.excute();
+      this.showif = true;
+      this.$refs.model.test();
     },
+    
   }
   
 }

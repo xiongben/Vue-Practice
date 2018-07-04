@@ -5,6 +5,7 @@ import Login from '@/components/Login'
 import MainPage from '@/components/MainPage'
 import Mainhome from '@/components/Mainhome'
 import Mainprofile from '@/components/Mainprofile'
+import info from '@/components/info'
 
 Vue.use(Router)
 
@@ -19,6 +20,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/info',
+      name: 'Info',
+      component: info
     },
     {
       path: '/main',
