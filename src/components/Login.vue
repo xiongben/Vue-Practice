@@ -5,12 +5,15 @@
         <p class="title">welcome to here!</p>
       </el-header>
       <el-main>
-        <el-input v-model="username" placeholder="用户名" class="inputForm"></el-input>
+        <el-input v-model="name" placeholder="用户名" class="inputForm"></el-input>
         <!-- <el-input v-model="tel" placeholder="手机号" class="inputForm"></el-input> -->
         <el-input v-model="pass" placeholder="密码" class="inputForm"></el-input>
+        <el-input v-model="checknum" placeholder="验证码" class="inputForm"></el-input>
         <!-- <el-input v-model="age" placeholder="年龄" class="inputForm"></el-input> -->
+        <img :src="imgsrc" class="img">
         <el-button type="danger" class="inputForm" @click="submit()">登录</el-button>
         <el-button type="danger" class="inputForm" @click="createUser()">注册</el-button>
+        
       </el-main>
     </el-container>
   </div>
@@ -27,31 +30,48 @@ export default {
   },
   data () {
     return {
-      username:'',
+      name:'',
       tel:'',
       pass:'',
-      age:''
+      age:'',
+      checknum:null,
+      imgsrc:null,
     }
   },
+  mounted() {
+    this.init();
+  },
   methods:{
+      init(){
+        var isSupportDownload = 'download' in document.createElement('a');
+        console.log(isSupportDownload);
+        this.imgsrc = "http://localhost/xiongben/Login/verifyImg";
+        
+      },
       submit(){
         let params={
-          username:this.username,
-          password:this.pass,
+          name:this.name,
+          pass:this.pass,
+          checknum:this.checknum,
         }
-        request('/login/userlogin',params,'post').then((res)=>{
+        console.log(this.name);
+        request('User',params,'post').then((res)=>{
           console.log(res);
           let resCode=res.status;
-          if(resCode === 0){
-            this.$router.push({name:'MainPage',params:{userid:111}})
-          }else{
-            this.$message({
-              message: res.data,
-              type: 'warning'
-            });
-          }
+          // if(resCode === 0){
+          //   this.$router.push({name:'MainPage',params:{userid:111}})
+          // }else{
+          //   this.$message({
+          //     message: res.data,
+          //     type: 'warning'
+          //   });
+          // }
         })
         
+      },
+      mp(){
+         //window.open('http://cdn.moji.com/websrc/video/video2018summer.mp4');
+         download("http://cdn.moji.com/websrc/video/video2018summer.mp4","moji.mp4","video/mp4");
       },
       createUser(){
         let params={
@@ -95,5 +115,10 @@ export default {
     height:1000px;
     background: red;
 
+  }
+  .img{
+    height:50px;
+    width:150px;
+    float: left;
   }
 </style>
