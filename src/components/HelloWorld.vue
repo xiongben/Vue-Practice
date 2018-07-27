@@ -9,7 +9,7 @@
 <script>
 import Info from './info.vue'
 export default {
-  name: 'HelloWorldrrrrrrrrrrr',
+  name: 'HelloWorld这是新的需要河滨的',
   components:{
     Info
   },
