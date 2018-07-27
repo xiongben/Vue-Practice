@@ -9,7 +9,7 @@
 <script>
 import Info from './info.vue'
 export default {
-  name: 'HelloWorld这是新的需要河滨的,test2',
+  name: 'HelloWorld这是新的需要河滨的,test2,z这个是test2峰值的，注意了啊',
   components:{
     Info
   },
