@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h3>master</h3>
+    <p>下一站遇到你</p>
     <router-link to="/login">login</router-link>
     <router-link to="/main">mainpage</router-link>
   </div>
