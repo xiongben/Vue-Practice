@@ -9,7 +9,7 @@
 <script>
 import Info from './info.vue'
 export default {
-  name: 'HelloWorldrrrrrrrrrrr',
+  name: 'HelloWorldrrrrrrrrrrr222222222222',
   components:{
     Info
   },
