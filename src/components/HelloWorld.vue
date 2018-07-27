@@ -5,6 +5,8 @@
     <p>下一站遇到你</p>
     <h2>test</h2>
     <p>你是我下雨天想起的人</p>
+    <h2>test2</h2>
+    <p>加油加油加油再加油</p>
     <router-link to="/login">login</router-link>
     <router-link to="/main">mainpage</router-link>
   </div>
