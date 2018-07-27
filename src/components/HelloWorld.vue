@@ -3,6 +3,8 @@
     <h1>{{ msg }}</h1>
     <h3>master</h3>
     <p>下一站遇到你</p>
+    <h2>test</h2>
+    <p>你是我下雨天想起的人</p>
     <router-link to="/login">login</router-link>
     <router-link to="/main">mainpage</router-link>
   </div>
