@@ -6,6 +6,8 @@ import MainPage from '@/components/MainPage'
 import Mainhome from '@/components/Mainhome'
 import Mainprofile from '@/components/Mainprofile'
 import info from '@/components/info'
+import Wechat from '@/components/Wechat'
+
 
 Vue.use(Router)
 
@@ -36,6 +38,9 @@ export default new Router({
         },
         {
           path:'profile',component:Mainprofile
+        },
+        {
+          path:'wechat',component:Wechat
         }
       ]
     }

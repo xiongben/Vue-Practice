@@ -25,16 +25,7 @@
               <el-option label="极致地" value="极致地"></el-option>
             </el-select>
           </el-col>
-          
         </el-form-item>
-        <!-- <el-form-item label="活动性质">
-          <el-checkbox-group v-model="userform.type">
-            <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
-            <el-checkbox label="地推活动" name="type"></el-checkbox>
-            <el-checkbox label="线下主题活动" name="type"></el-checkbox>
-            <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
-          </el-checkbox-group>
-        </el-form-item> -->
         <el-form-item label="skill">
           <el-input type="textarea" v-model="userform.skill"></el-input>
         </el-form-item>

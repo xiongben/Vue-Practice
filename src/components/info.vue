@@ -1,14 +1,18 @@
 <template>
   <div class="box">
-    <div class="minbox"></div>
+    <div class="minbox">
+      <p>{{mess}}</p>
+      <p>{{title}}</p>
+    </div>
     <div class="a1"></div>
+    <el-button type="success" @click="send">send to F</el-button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props:['age'],
+  name: 'InfoModel',
+  props:['age','title'],
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
@@ -17,8 +21,11 @@ export default {
     }
   },
   methods:{
-    changeName(){
-
+    changeMess(){
+       this.mess = "我喜欢你，就像风走了八万里，不问归期";
+    },
+    send() {
+      this.$emit('changetest');
     }
   }
   
@@ -27,7 +34,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .box{
+  /* .box{
     width:100%;
     
     background: yellowgreen;
@@ -42,5 +49,5 @@ export default {
     width:1.875rem;
     height:1rem;
     background: yellow;
-  }
+  } */
 </style>

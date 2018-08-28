@@ -8,8 +8,11 @@ import App from './App'
 import router from './router'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import './../static/style.css'
+import VueSocketio from 'vue-socket.io'
+
 
 Vue.use(ElementUI);
+// Vue.use(VueSocketio, 'http://localhost:5000/test');
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyBSrscXECy9H7T9fsgRMC6ZFbqD6VjZ6dA',

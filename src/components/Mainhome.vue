@@ -2,22 +2,7 @@
   <div class="mainhome">
     <div id="mymap">
       <div id="map">
-        <GmapMap
-          :center="{lat:10, lng:10}"
-          :zoom="7"
-          map-type-id="terrain"
-          style="width: 1000px; height: 600px"
-          ref="xbmap"
-        >
-          <GmapMarker
-            :key="index"
-            v-for="(m, index) in markers"
-            :position="m.position"
-            :clickable="true"
-            :draggable="true"
-            @click="center=m.position"
-          />
-        </GmapMap>
+        
         <el-button type="success" @click="tochangsha()">长沙</el-button>
       </div>
     </div>
@@ -65,6 +50,9 @@ export default {
         console.log('buchunzai')
     }
   },
+  created() {
+    this.testfn();
+  },
   methods:{
     getinfo(){
       console.log(this.name);
@@ -77,6 +65,10 @@ export default {
       this.$refs.xbmap.$mapPromise.then((map) => {
       map.panTo({lat: 28.21, lng: 113})
     })
+    },
+    testfn() {
+      
+        
     }
   }
   
