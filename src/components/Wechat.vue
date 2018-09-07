@@ -26,16 +26,16 @@ export default {
       mess:'',
     }
   },
-  // sockets: {
-  //   connect: function() {
-  //       console.log("connected,xiongben");
-  //   },
-  //   myResponse(val) {
-  //       console.log(val);
-  //       this.textarea += val.data;
-  //       this.textarea += '\n';
-  //   }
-  // },
+  sockets: {
+    connect: function() {
+        console.log("connected,xiongben");
+    },
+    myResponse(val) {
+        console.log(val);
+        this.textarea += val.data;
+        this.textarea += '\n';
+    }
+  },
   methods:{
     sendMess: function(val) {
         var params = {

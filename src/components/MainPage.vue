@@ -57,6 +57,7 @@
 <script>
 import Info from "./info.vue";
 
+
 export default {
   name: "HelloWorld",
   components: {
@@ -71,7 +72,49 @@ export default {
       mes: true,
       input: "",
       sonTitle:"父组件给子组件的标题，拿好了",
+      testobj: {
+        obj1: {
+          obj1_1:{
+            obj1_1_1: {
+              name: "obj1-1-1"
+            },
+            obj1_1_2: {
+              name: "obj1_1_2"
+            }
+          },
+          obj1_2: {
+            obj1_2_1: {
+              name: "obj1_2_1"
+            }
+          },
+          obj1_3: {
+            name: "obj1_3"
+          }
+        },
+        obj2: {
+          obj2_1:{
+            obj2_1_1: {
+              name: "obj2-1-1"
+            },
+            obj2_1_2: {
+              name: "obj2_1_2"
+            }
+          },
+          obj2_2: {
+            obj2_2_1: {
+              name: "obj2_2_1"
+            }
+          },
+          obj2_3: {
+            name: "obj2_3"
+          }
+        }
+      },
     };
+  },
+  created() {
+    console.log(process.env);
+    this.callbackfn();
   },
   methods: {
     getinfo() {
@@ -94,6 +137,21 @@ export default {
       },
     tomodel(){
       this.$refs.info.changeMess();
+    },
+    callbackfn() {
+       var data = this.testobj;
+       this.testfn(data);
+    },
+    testfn(data) {
+      // console.log(data);
+      if(data instanceof Object){
+        for(var key in data) {
+          // console.log(key);
+          this.testfn(data[key]);
+        }
+      }else{
+        console.log("this is " + data);
+      }
     }
   }
 };
