@@ -143,10 +143,8 @@ export default {
        this.testfn(data);
     },
     testfn(data) {
-      // console.log(data);
       if(data instanceof Object){
         for(var key in data) {
-          // console.log(key);
           this.testfn(data[key]);
         }
       }else{
