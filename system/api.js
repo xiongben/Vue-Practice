@@ -2,7 +2,7 @@
 
 import axios from "axios";
 // var baseUrl='http://localhost:3001';
-var baseUrl='http://localhost:5000/';
+var baseUrl=process.URL_BASE;
 
 
 function paramsFormdata(params){
@@ -27,7 +27,6 @@ export default  function request(url,params,type){
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
         },
-        
     };
   if(!type || type === 'get'){
      method='GET';
