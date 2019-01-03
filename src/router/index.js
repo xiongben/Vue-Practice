@@ -7,7 +7,9 @@ import Mainhome from '@/components/Mainhome'
 import Mainprofile from '@/components/Mainprofile'
 import info from '@/components/info'
 import Wechat from '@/components/Wechat'
+import Praccss from '@/components/Praccss'
 
+console.log(Praccss)
 
 Vue.use(Router)
 
@@ -29,6 +31,11 @@ export default new Router({
       component: info
     },
     {
+      path: '/praccss',
+      name: 'Praccss',
+      component: Praccss
+    },
+    {
       path: '/main',
       name: 'MainPage',
       component: MainPage,
@@ -41,7 +48,7 @@ export default new Router({
         },
         {
           path:'wechat',component:Wechat
-        }
+        },
       ]
     }
   ]

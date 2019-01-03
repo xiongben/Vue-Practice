@@ -4,18 +4,16 @@
     <h3>master</h3>
     <p>下一站遇到你</p>
     <h2>test</h2>
-    <p>你是我下雨天想起的人</p>
-    <h2>test2</h2>
-    <p>加油加油加油再加油</p>
     <router-link to="/login">login</router-link>
     <router-link to="/main">mainpage</router-link>
+    <router-link to="/praccss">css</router-link>
   </div>
 </template>
 
 <script>
 import Info from './info.vue'
 export default {
-  name: 'HelloWorld这是新的需要河滨的,test2,z这个是test2峰值的，注意了啊,解决冲突了啊，注意',
+  name: 'hello',
   components:{
     Info
   },

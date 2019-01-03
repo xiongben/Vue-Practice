@@ -9,9 +9,11 @@ import router from './router'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import './../static/style.css'
 import VueSocketio from 'vue-socket.io'
+import store from './../store'
 
 
 Vue.use(ElementUI);
+
 // Vue.use(VueSocketio, 'http://localhost:5000/test');
 Vue.use(VueGoogleMaps, {
   load: {
@@ -44,6 +46,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

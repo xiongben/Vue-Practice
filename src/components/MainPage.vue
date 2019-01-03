@@ -50,18 +50,19 @@
       <router-link to="/main/profile">mainprofile</router-link>
       <router-link to="/main/wechat">聊天室</router-link>
       <router-view></router-view> -->
-      
   </el-container>
+  
 </template>
 
 <script>
 import Info from "./info.vue";
+import {mapMutations} from 'vuex';
 
 
 export default {
   name: "HelloWorld",
   components: {
-    Info
+    Info,
   },
   data() {
     return {
@@ -113,10 +114,13 @@ export default {
     };
   },
   created() {
-    console.log(process.env);
+    // console.log(process.env);
     this.callbackfn();
+    this.$store.dispatch('test2');
+    this.test();
   },
   methods: {
+    ...mapMutations(['test','test2']),
     getinfo() {
       console.log(this.name);
     },
