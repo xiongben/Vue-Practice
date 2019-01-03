@@ -11,7 +11,7 @@ import './../static/style.css'
 import VueSocketio from 'vue-socket.io'
 import store from './../store'
 
-console.log("test2");
+console.log("test");
 
 
 Vue.use(ElementUI);
