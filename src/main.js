@@ -11,7 +11,10 @@ import './../static/style.css'
 import VueSocketio from 'vue-socket.io'
 import store from './../store'
 
+
 console.log("master now");
+console.log("test");
+
 
 Vue.use(ElementUI);
 
