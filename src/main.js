@@ -9,6 +9,10 @@ import router from './router'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import './../static/style.css'
 
+
+
+console.log("tes,dddt");
+
 Vue.use(ElementUI);
 Vue.use(VueGoogleMaps, {
   load: {
