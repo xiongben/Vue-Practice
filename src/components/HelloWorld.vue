@@ -30,6 +30,7 @@ export default {
   methods:{
     getinfo(){
       console.log(this.name);
+      console.log("测试过程中");
     },
     changeMess(){
       this.mes=!this.mes;
