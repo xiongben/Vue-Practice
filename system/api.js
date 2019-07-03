@@ -2,7 +2,8 @@
 
 import axios from "axios";
 // var baseUrl='http://localhost:3001';
-var baseUrl=process.URL_BASE;
+var baseUrl='/api';
+
 
 
 function paramsFormdata(params){
@@ -20,6 +21,7 @@ function paramsFormdata(params){
 
 export default  function request(url,params,type){
   let requrl=baseUrl+url;
+  // let requrl = url;
   let paramsData;
   let method;
   let requestData;
@@ -39,11 +41,13 @@ export default  function request(url,params,type){
      url:requrl,
      method:method,
     //  withCredentials: true,
-     data:paramsData,
+     params:paramsData,
      config:method === 'POST'?config : '',
   };
   return axios.request(requestData).then((res)=>{
          return Promise.resolve(res.data);
+  }).catch(function(error){
+    return error;
   })
 }
 

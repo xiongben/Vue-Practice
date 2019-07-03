@@ -7,6 +7,7 @@
     <router-link to="/login">login</router-link>
     <router-link to="/main">mainpage</router-link>
     <router-link to="/praccss">css</router-link>
+    <router-link to="/badge">badge</router-link>
   </div>
 </template>
 

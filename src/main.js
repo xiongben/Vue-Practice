@@ -10,7 +10,7 @@ import * as VueGoogleMaps from 'vue2-google-maps'
 import './../static/style.css'
 import VueSocketio from 'vue-socket.io'
 import store from './../store'
-
+import './js/rem'
 
 
 
