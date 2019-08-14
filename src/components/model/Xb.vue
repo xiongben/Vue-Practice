@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1>this is slot test</h1>
+      <h1>this is slot test!!!!</h1>
       <slot></slot>
       <slot name="slot1"></slot>
       <slot name="slot2"></slot>
