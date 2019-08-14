@@ -8,15 +8,31 @@
     <router-link to="/main">mainpage</router-link>
     <router-link to="/praccss">css</router-link>
     <router-link to="/badge">badge</router-link>
+    <div class="slot">
+       <Xb>
+          <h2>this is parent dom title</h2>
+          <div class="slot1" slot="slot1">
+            <h3>this is slot 1</h3>
+          </div>
+          <div class="slot1" slot="slot2">
+            <h3>this is slot 2</h3>
+          </div>
+          <div class="slot1" slot="slot3">
+            <h3>this is slot 3</h3>
+          </div>
+       </Xb>
+    </div>
   </div>
 </template>
 
 <script>
 import Info from './info.vue'
+import Xb from './model/Xb.vue'
 export default {
   name: 'hello',
   components:{
-    Info
+    Info,
+    Xb
   },
   data () {
     return {
@@ -66,5 +82,13 @@ a {
   color:#fff;
   text-align: center;
   line-height:100px;
+}
+.slot{
+  width: 300px;
+  height: 300px;
+  background: yellow;
+}
+.slot1{
+  background: blue;
 }
 </style>
