@@ -1,43 +1,39 @@
 <template>
     <div class="box">
         <div class="badgeArea">
-            <div class="badgeTitle">Achievement</div>
-            <div class="badgeUl" id="achievement">
-                <div class="badgeLi" v-for="(item,index) in achieveList" :key="index">
-                    <img class="badgeIcon" :src="item.badgeUrl">
-                    <p class="textDetail">{{item.badgeName}}</p>
-                    <p class="otherText">14/3/19</p>
-                </div>
-            </div>
-            <div class="badgeTitle">Challenge</div>
-            <div class="badgeUl" id="challenge">
-                <div class="badgeLi" v-for="(item,index) in challengeList" :key="index">
-                    <img class="badgeIcon" :src="item.badgeUrl">
-                    <p class="textDetail">{{item.badgeName}}</p>
-                    <p class="otherText">14/3/19</p>
-                </div>
-            </div>
+           
         </div>
+        <SonComponent :detaildata="sondata"></SonComponent>
     </div>
 </template>
 
 <script>
 import request from './../../system/api';
 import axios from "axios";
+import SonComponent from "./model/SonComponent";
 export default {
     name: 'Badge',
+
     data(){
       return {
           title: "test badge",
           userId: 120058,
           achieveList: [],
           challengeList: [],
+          sondata: {
+              num: 0,
+              name: "xiaoming",
+          }
       }
     },
+    components:{SonComponent},
     created() {
-        this.userId = this.getUrlparams(this.userId)? this.getUrlparams(this.userId):120058;
-        this.getBadge(this.userId);
+        // this.userId = this.getUrlparams(this.userId)? this.getUrlparams(this.userId):120058;
+        // this.getBadge(this.userId);
         // this.testapi()
+        setInterval(()=>{
+           this.sondata.num += 1;
+        },2000)
     },
     methods: {
         getBadge(){
@@ -49,7 +45,7 @@ export default {
            request(url,params,'get').then((res)=>{
                this.achieveList = res.achievement;
                this.challengeList = res.challenge;
-               console.log(this.achieveList);
+            //    console.log(this.achieveList);
             })
         },
         testapi(){
