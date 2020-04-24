@@ -36,8 +36,8 @@ export default {
     },
     created() {
         this.userId = this.getUrlparams(this.userId)? this.getUrlparams(this.userId):120058;
-        this.getBadge(this.userId);
-        // this.testapi()
+        // this.getBadge(this.userId);
+        this.testapi()
     },
     methods: {
         getBadge(){
@@ -54,11 +54,11 @@ export default {
         },
         testapi(){
             axios.request({
-                url:'http://10.40.16.20:2080/reward/badges/get-summary',
+                url:'http://0.0.0.0:5000/',
                 method: 'GET',
+                withCredentials: true,
                 params:{
-                    userId: 120058,
-                    ownedBadgeWall:true,
+                   
                 }
             }).then(function(response){
                 console.log(response.data);
