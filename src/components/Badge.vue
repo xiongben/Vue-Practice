@@ -5,16 +5,16 @@
            
            
            <DetailBox3></DetailBox3>
-           <!-- <button @click="show = !show">
+           <button @click="show = !show">
                 Toggle render
             </button>
             <div class="testan">
-           <transition name="bounce">
+           <transition name="slide-fade">
                 <DetailBox1 v-if="show"></DetailBox1>
                 <DetailBox2 v-if="!show"></DetailBox2>
             </transition>
             
-            </div> -->
+            </div>
             <div class="testan">
                 <DetailBox1 class="testmovebox"></DetailBox1>
                 <DetailBox2></DetailBox2>
@@ -150,7 +150,7 @@ export default {
     }
     .slide-fade-enter, .slide-fade-leave-to
     /* .slide-fade-leave-active for below version 2.1.8 */ {
-    transform: translateX(10px);
+    transform: translateX(150px);
     opacity: 0;
     }
   
