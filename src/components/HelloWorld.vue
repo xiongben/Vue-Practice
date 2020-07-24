@@ -4,6 +4,8 @@
     <h3>master</h3>
     <p>下一站遇到你</p>
     <h2>test</h2>
+    <!-- <div id="appleid-signin" data-color="black" data-border="true" data-type="sign in">apple login</div> -->
+    <button @click="apple">apple</button>
     <router-link to="/login">login</router-link>
     <router-link to="/main">mainpage</router-link>
     <router-link to="/praccss">css</router-link>
@@ -44,6 +46,17 @@ export default {
       input:''
     }
   },
+  mounted(){
+    document.addEventListener('AppleIDSignInOnSuccess', (data) => {
+              //handle successful response
+              console.log(data)
+          });
+          //Listen for authorization failures
+          document.addEventListener('AppleIDSignInOnFailure', (error) => {
+              //handle error.
+              console.log(error)
+          });
+  },
   methods:{
     getinfo(){
       console.log(this.name);
@@ -52,7 +65,28 @@ export default {
     changeMess(){
       this.mes=!this.mes;
       this.mess=this.mes?'我要去烂漫的土耳其啊啊啊啊啊啊':'i want to balama';
-    }
+    },
+    apple() {
+       AppleID.auth.init({
+        clientId : "com.login.loops",
+        response_type: "code",
+        response_mode: "query",
+        // scope : '',
+        redirectURI : 'https://www-test.loopslive.com/web-loops/pay-return/apple.html',
+        // state : '',
+        // nonce : '',
+        usePopup : false //or false defaults to false
+      });
+      try {
+          const data =  AppleID.auth.signIn()
+          console.log(data)
+          //Listen for authorization success
+          
+      } catch ( error ) {
+        console.log(error)
+          //handle error.
+      }
+    },
   }
   
 }
