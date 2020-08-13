@@ -30,6 +30,7 @@
 <script>
 import Info from './info.vue'
 import Xb from './model/Xb.vue'
+var jwt = require('jsonwebtoken');
 export default {
   name: 'hello',
   components:{
@@ -47,46 +48,23 @@ export default {
     }
   },
   mounted(){
-    document.addEventListener('AppleIDSignInOnSuccess', (data) => {
-              //handle successful response
-              console.log(data)
-          });
-          //Listen for authorization failures
-          document.addEventListener('AppleIDSignInOnFailure', (error) => {
-              //handle error.
-              console.log(error)
-          });
+    //  var aa = this.getRandom(10)
+    //  console.log(aa)
   },
   methods:{
     getinfo(){
       console.log(this.name);
       console.log("测试过程中");
     },
+    getRandom(num){
+    var random = Math.floor((Math.random()+Math.floor(Math.random()*9+1))*Math.pow(10,num-1));
+    return random
+    },
     changeMess(){
       this.mes=!this.mes;
       this.mess=this.mes?'我要去烂漫的土耳其啊啊啊啊啊啊':'i want to balama';
     },
-    apple() {
-       AppleID.auth.init({
-        clientId : "com.login.loops",
-        response_type: "code",
-        response_mode: "query",
-        // scope : '',
-        redirectURI : 'https://www-test.loopslive.com/web-loops/pay-return/apple.html',
-        // state : '',
-        // nonce : '',
-        usePopup : false //or false defaults to false
-      });
-      try {
-          const data =  AppleID.auth.signIn()
-          console.log(data)
-          //Listen for authorization success
-          
-      } catch ( error ) {
-        console.log(error)
-          //handle error.
-      }
-    },
+    
   }
   
 }
