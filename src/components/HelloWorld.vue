@@ -65,7 +65,7 @@ export default {
       this.mess=this.mes?'我要去烂漫的土耳其啊啊啊啊啊啊':'i want to balama';
     },
     testfn(){
-       console.log("add for test 2");
+       console.log("add for test 3");
     },
     
   }
