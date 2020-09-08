@@ -1,11 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h3>master</h3>
-    <p>下一站遇到你</p>
     <h2>test</h2>
-    <!-- <div id="appleid-signin" data-color="black" data-border="true" data-type="sign in">apple login</div> -->
-    <button @click="apple">apple</button>
+   
     <router-link to="/login">login</router-link>
     <router-link to="/main">mainpage</router-link>
     <router-link to="/praccss">css</router-link>
