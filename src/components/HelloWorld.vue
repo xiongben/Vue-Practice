@@ -48,6 +48,9 @@ export default {
     //  var aa = this.getRandom(10)
     //  console.log(aa)
   },
+  created(){
+     this.testfn()
+  },
   methods:{
     getinfo(){
       console.log(this.name);
@@ -62,7 +65,43 @@ export default {
       this.mess=this.mes?'我要去烂漫的土耳其啊啊啊啊啊啊':'i want to balama';
     },
     testfn(){
-       console.log("add for test 3");
+      // var str = "asdfff ffff xiongben hfhfhf xiongben  tom jack"
+      // var str2 = str.replace(/xiongben/ig, "=")
+      // console.log(str2)
+      // var emailStr = "xiongbenwww@gmail.com"
+      // var emailStr2 = "xiongben中国www@gmail.com"
+      // var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+      // var reg2 = /^([A-Za-z0-9_\-\.\u4e00-\u9fa5])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,8})$/
+      // console.log(reg.test(emailStr))
+      // console.log(reg2.test(emailStr2))
+
+      var str3 = "?id=12&age=23&name=xiongben"
+      var reg3 = /(\w+)=(\w+)/ig
+      var paramsItem = "name"
+      var reg4 = new RegExp("(^|&)" + paramsItem + "=([^&]*)(&|$)","i")                                                        
+      // var params = {}
+      // str3.replace(reg3, function(a,b,c){
+      //   console.log(a,b,c)
+      //   params[b] = c
+      // })
+      // console.log(params)
+
+      var r = str3.match(reg4)
+      // console.log(r[2])
+
+      // var reg5 = /(^|s)aa([A-Za-z]*)$/g
+      // var reg55 = new RegExp("(^|s)aa([A-Za-z]*)$","ig")
+      // var str5 = "saattaass"
+      // var res5 = str5.match(reg55)
+      // console.log(res5)
+
+      // var reg6 = /aaa9?/g
+      // var str6 = "a aab aaabbb "
+      // var res6 = str6.match(reg6)
+      // console.log(res6)
+
+      
+
     },
     
   }
