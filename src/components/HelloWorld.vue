@@ -100,8 +100,32 @@ export default {
       // var res6 = str6.match(reg6)
       // console.log(res6)
 
-      
+      //过滤html标签
+      // var str7 = "<p>this is a html dom<span>red</span></p><div>666</div>"
+      // var regx7 = /\<[^<>]*\>/g
+      // var res7 = str7.match(regx7)
+      // res7 = str7.replace(regx7,"")
+      // console.log(res7)
 
+      // //16进制颜色正则
+      // var regx8 = /^\#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/
+      // var str8 = "#fff"
+      // var res8 = str8.match(regx8)
+      // console.log(res8)
+      // console.log(regx8.test(str8))
+
+      //url正则
+      // var regx9 = /^((https?|ftp|file)\:\/\/)?([\da-z\.\-]+)\.([a-z\.]{2,6})([\/\w\.\-]*)*\/?$/                                                                    
+      // var str9 = "https://www.baidu.com/page/one"
+      // var res9 = str9.match(regx9)
+      // console.log(res9)
+      
+      //千位分割
+      // var regx10 = /\d{1,3}(?=(\d{3})+$)/g
+      // var str10 = "123"
+      // var res10 = str10.match(regx10)
+      // res10 = str10.replace(regx10,"$&,")
+      // console.log(res10)
     },
     
   }
