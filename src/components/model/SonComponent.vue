@@ -2,7 +2,7 @@
     <div>
       <h1>this is son component</h1>
       <p>name:{{detaildata.name}}</p>
-      <p>num:{{resdata.num}}</p>
+      <p>num:{{detaildata.num}}</p>
     </div>
 </template>
 <script>
@@ -12,9 +12,7 @@ export default {
        detaildata: {},
     },
     data() {
-        return {
-            resdata: this.detaildata
-        }
+        return {}
     },
     created() {
         

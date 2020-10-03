@@ -21,18 +21,21 @@
           </div>
        </Xb>
     </div>
+    <son-component :detaildata="sonInfo"></son-component>
   </div>
 </template>
 
 <script>
 import Info from './info.vue'
 import Xb from './model/Xb.vue'
+import SonComponent from './model/SonComponent.vue'
 var jwt = require('jsonwebtoken');
 export default {
   name: 'hello',
   components:{
     Info,
-    Xb
+    Xb,
+    SonComponent
   },
   data () {
     return {
@@ -41,7 +44,10 @@ export default {
       agenum:25,
       mess:'成都，带不走的只有你，和我在成都的街头走一走99999',
       mes:true,
-      input:''
+      input:'',
+      sonInfo:{
+       
+      }
     }
   },
   mounted(){
@@ -49,7 +55,13 @@ export default {
     //  console.log(aa)
   },
   created(){
-     this.testfn()
+     this.testfn();
+     setTimeout(()=>{
+        this.sonInfo = {
+          name: "xiaoming",
+          num: 50
+        }
+     },3000)
   },
   methods:{
     getinfo(){
@@ -79,15 +91,15 @@ export default {
       var reg3 = /(\w+)=(\w+)/ig
       var paramsItem = "name"
       var reg4 = new RegExp("(^|&)" + paramsItem + "=([^&]*)(&|$)","i")                                                        
-      // var params = {}
-      // str3.replace(reg3, function(a,b,c){
-      //   console.log(a,b,c)
-      //   params[b] = c
-      // })
-      // console.log(params)
+      var params = {}
+      str3.replace(reg3, function(a,b,c){
+        console.log(a,b,c)
+        params[b] = c
+      })
+      console.log(params)
 
       var r = str3.match(reg4)
-      // console.log(r[2])
+      console.log(r[2])
 
       // var reg5 = /(^|s)aa([A-Za-z]*)$/g
       // var reg55 = new RegExp("(^|s)aa([A-Za-z]*)$","ig")
