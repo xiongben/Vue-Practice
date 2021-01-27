@@ -1,16 +1,14 @@
 <template>
   <div class="hello">
     <el-container>
-      <el-header>
-        <p class="title">welcome to here!</p>
-      </el-header>
+      
       <el-main>
         <el-input v-model="name" placeholder="用户名" class="inputForm"></el-input>
         <!-- <el-input v-model="tel" placeholder="手机号" class="inputForm"></el-input> -->
         <el-input v-model="pass" placeholder="密码" class="inputForm"></el-input>
         <el-input v-model="checknum" placeholder="验证码" class="inputForm"></el-input>
         <!-- <el-input v-model="age" placeholder="年龄" class="inputForm"></el-input> -->
-        <img :src="imgsrc" class="img">
+        <img :src="imgsrc" class="img"><br/>
         <el-button type="danger" class="inputForm" @click="submit()">登录</el-button>
         <el-button type="danger" class="inputForm" @click="createUser()">注册</el-button>
         
@@ -106,7 +104,7 @@ export default {
     color:blue;
   }
   .inputForm{
-    width:400px;
+    width:80%;
     margin:20px 0;
     display: block;
   }

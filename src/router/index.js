@@ -8,6 +8,7 @@ import Mainprofile from '@/components/Mainprofile'
 import info from '@/components/info'
 import Wechat from '@/components/Wechat'
 import Praccss from '@/components/Praccss'
+import Badge from '@/components/Badge'
 
 console.log(Praccss)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/praccss',
       name: 'Praccss',
       component: Praccss
+    },
+    {
+      path: '/badge',
+      name: 'Badge',
+      component: Badge
     },
     {
       path: '/main',

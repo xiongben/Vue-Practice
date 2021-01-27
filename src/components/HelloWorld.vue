@@ -4,18 +4,38 @@
     <h3>master</h3>
     <p>下一站遇到你</p>
     <h2>test</h2>
+    <!-- <div id="appleid-signin" data-color="black" data-border="true" data-type="sign in">apple login</div> -->
+    <button @click="apple">apple</button>
     <router-link to="/login">login</router-link>
     <router-link to="/main">mainpage</router-link>
     <router-link to="/praccss">css</router-link>
+    <router-link to="/badge">badge</router-link>
+    <div class="slot">
+       <Xb>
+          <h2>this is parent dom title</h2>
+          <div class="slot1" slot="slot1">
+            <h3>this is slot 1</h3>
+          </div>
+          <div class="slot1" slot="slot2">
+            <h3>this is slot 2</h3>
+          </div>
+          <div class="slot1" slot="slot3">
+            <h3>this is slot 3</h3>
+          </div>
+       </Xb>
+    </div>
   </div>
 </template>
 
 <script>
 import Info from './info.vue'
+import Xb from './model/Xb.vue'
+var jwt = require('jsonwebtoken');
 export default {
   name: 'hello',
   components:{
-    Info
+    Info,
+    Xb
   },
   data () {
     return {
@@ -27,14 +47,24 @@ export default {
       input:''
     }
   },
+  mounted(){
+    //  var aa = this.getRandom(10)
+    //  console.log(aa)
+  },
   methods:{
     getinfo(){
       console.log(this.name);
+      console.log("测试过程中");
+    },
+    getRandom(num){
+    var random = Math.floor((Math.random()+Math.floor(Math.random()*9+1))*Math.pow(10,num-1));
+    return random
     },
     changeMess(){
       this.mes=!this.mes;
       this.mess=this.mes?'我要去烂漫的土耳其啊啊啊啊啊啊':'i want to balama';
-    }
+    },
+    
   }
   
 }
@@ -64,5 +94,13 @@ a {
   color:#fff;
   text-align: center;
   line-height:100px;
+}
+.slot{
+  width: 300px;
+  height: 300px;
+  background: yellow;
+}
+.slot1{
+  background: blue;
 }
 </style>

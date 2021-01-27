@@ -9,5 +9,5 @@
 
 module.exports = {
   NODE_ENV: '"development"',
-  URL_BASE: '"http://localhost:3001"',
+  URL_BASE: '"http://10.40.16.20:2080"',
 }
